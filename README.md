@@ -1,3 +1,7 @@
+# WIP: New portfolio repo
+Will live on [https://pratterino.se](https://pratterino.se) when ready.
+
+------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
