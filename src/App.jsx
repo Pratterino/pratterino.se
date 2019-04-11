@@ -4,7 +4,7 @@ import './App.scss';
 class App extends Component {
     skills = {
         frontend: ["React", "Redux", "HTML", "CSS3", "SASS", "Async/Await"],
-        backend: ["Java 8+", "Java Spring", "NodeJS"],
+        backend: ["Java 11", "Java Spring 2", "NodeJS"],
     };
 
     games = [{
@@ -34,6 +34,13 @@ class App extends Component {
                     <br/>
                     {this.renderSkill("backend")}
                 </div>
+
+                <div className="description">Jag är en systemutvecklare med främre inriktning mot frontend.
+                    Har erfarenheter från en rad olika ramverk såsom React, Redux, Backbone och NodeJS.
+                    Jag jobbar testdrivet och har bland annat erfarenhet inom testramverk såsom: Jest, Enzyme, Jasmine, och Sanity.<br/><br/>
+                    Det är viktigt att teamet diskuterar kod och känner ett gemensamt ägarskap.<br/>
+                    Som en konsekvens av detta har han därför varit med och tagit fram <a href={"https://mobtimer.com/"}>mobtimer.com</a> som underlättar arbetet för team att genomföra mobbprogrammering.</div>
+
                 <div className="games-container">
                     <h4>Games</h4>
                     {this.games.map(game => {

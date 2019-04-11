@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand');
 
 $backgroundColor: #f0f0f0;
 * {
@@ -8,7 +8,7 @@ $backgroundColor: #f0f0f0;
 
 html, body {
   background-color: $backgroundColor;
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Gochi Hand', cursive;
   height: 100%;
 }
 
@@ -76,13 +76,25 @@ html, body {
     left: 50px;
     display: block;
 
-    a.game {
+    a {
+      color: #555;
+      text-decoration: none;
       margin: 4px;
       display: inline-block;
       background: #ea5251;
       border-radius: 4px;
       padding: 2px;
     }
+  }
+
+  .description {
+    padding: 6px;
+    font-size: 1.2em;
+    position: absolute;
+    top: 45%;
+    width: 55%;
+    vertical-align: center;
+    text-align: center;
   }
 
   footer {
