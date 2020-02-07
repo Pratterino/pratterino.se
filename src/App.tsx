@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import './App.scss';
 
+interface ISkill {
+    frontend: Array<string>
+    backend: Array<string>
+}
+
 class App extends Component {
-    skills = {
+    skills: ISkill = {
         frontend: ["React", "Redux", "HTML", "CSS3", "SASS", "Async/Await"],
         backend: ["Java 11", "Java Spring 2", "NodeJS"],
     };
@@ -18,7 +23,8 @@ class App extends Component {
         link: "/games/safari",
     }];
 
-    renderSkill(skill) {
+    renderSkill(skill: string) {
+        // @ts-ignore
         return this.skills[skill].map(skill => (
             <div className="skill">{`#${skill}`}</div>
         ));
