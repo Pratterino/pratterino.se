@@ -1,60 +1,57 @@
-@import url('https://fonts.googleapis.com/css?family=Gochi+Hand');
+$backgroundColor: #f06b65;
+$padding: 20px;
+$fontColor: #f8f8f8;
 
-$backgroundColor: #f0f0f0;
 * {
+  font-family: 'Cormorant', serif;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+a {
+  color: $fontColor;
+  text-decoration: none;
+  box-shadow: inset 0 -0.05em white,
+  inset 0 -0.1em $backgroundColor,
+  inset 0 -0.15em $fontColor,
+}
+
 html, body {
-  background-color: $backgroundColor;
+  background: $backgroundColor;
   font-family: 'Gochi Hand', cursive;
-  height: 100%;
+  font-size: 15pt;
+}
+
+section {
+  flex: 1 0;
+  min-width: 200px;
+  min-height: 100vh;
+}
+
+header {
+  font-weight: bold;
+  font-size: 38px;
 }
 
 .App {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  color: $fontColor;
+  font-weight: 400;
 
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 40vmin;
-    pointer-events: none;
-  }
-
-  .App-link {
-    color: #61dafb;
+  .image {
+    display: flex;
+    height: 100%;
+    background: linear-gradient(-45deg, rgba(0, 0, 0, 0), $backgroundColor), url("./assets/pratterino.jpg");
+    opacity: .65;
+    background-size: cover;
+    background-position: right;
   }
 
   .content {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 500px;
-    text-align: center;
-
-    h1 {
-      text-align: center;
-      font-size: 6em;
-    }
-  }
-
-  .pratterino-image {
-    position: absolute;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0), $backgroundColor), url("./assets/pratterino.jpg");
-    opacity: .45;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    height: 100vh;
-    width: 50%;
-    display: block;
-    background-size: contain;
+    font-size: 20px;
+    padding: $padding;
   }
 
   .skill {
@@ -70,38 +67,18 @@ html, body {
     }
   }
 
-  .games-container {
-    position: absolute;
-    bottom: 50px;
-    left: 50px;
-    display: block;
-
-    a {
-      color: #555;
-      text-decoration: none;
-      margin: 4px;
-      display: inline-block;
-      background: #ea5251;
-      border-radius: 4px;
-      padding: 2px;
-    }
-  }
-
   .description {
-    padding: 6px;
     font-size: 1.2em;
-    position: absolute;
-    top: 45%;
-    width: 55%;
-    vertical-align: center;
-    text-align: center;
   }
 
   footer {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    text-align: right;
-    padding: 20px;
+    bottom: $padding;
+    text-align: left;
+
+    > a {
+      margin: 0 $padding/2;
+      box-shadow: unset;
+    }
   }
 }

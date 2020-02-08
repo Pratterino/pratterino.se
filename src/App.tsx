@@ -1,18 +1,20 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.scss';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 
 interface ISkill {
     frontend: Array<string>
     backend: Array<string>
 }
 
-class App extends Component {
-    skills: ISkill = {
+function App() {
+    const skills: ISkill = {
         frontend: ["React", "Redux", "HTML", "CSS3", "SASS", "Async/Await"],
         backend: ["Java 11", "Java Spring 2", "NodeJS"],
     };
 
-    games = [{
+    const games = [{
         name: "Hitta Pärs händer!",
         link: "/games/hands",
     }, {
@@ -23,44 +25,35 @@ class App extends Component {
         link: "/games/safari",
     }];
 
-    renderSkill(skill: string) {
-        // @ts-ignore
-        return this.skills[skill].map(skill => (
-            <div className="skill">{`#${skill}`}</div>
+    const renderSkill = (skill: 'frontend' | 'backend'): React.ReactElement[] =>
+        skills[skill].map((_skill: string) => (
+            <div className="skill">{`#${_skill}`}</div>
         ));
-    }
 
-    render() {
-        return (
-            <div className="App">
-                <div className="pratterino-image"/>
-                <div className="content">
-                    <h1>Pär Strandberg</h1>
-                    {this.renderSkill("frontend")}
-                    <br/>
-                    {this.renderSkill("backend")}
-                </div>
-
-                <div className="description">Jag är en systemutvecklare med främre inriktning mot frontend.
-                    Har erfarenheter från en rad olika ramverk såsom React, Redux, Backbone och NodeJS.
-                    Jag jobbar testdrivet och har bland annat erfarenhet inom testramverk såsom: Jest, Enzyme, Jasmine, och Sanity.<br/><br/>
+    return (
+        <div className="App">
+            <section>
+                <div className="image"/>
+            </section>
+            <section className="content">
+                <header>Pär Strandberg</header>
+                <div>Jag är en utvecklare med främst inriktning mot frontend.
+                    Har mycket erfarenheter med en rad olika ramverk såsom: React, Redux, NodeJS.
+                    Jag jobbar testdrivet och har bland annat erfarenhet inom testramverk såsom: Jest, Enzyme, Jasmine,
+                    och
+                    Sanity.<br/><br/>
                     Det är viktigt att teamet diskuterar kod och känner ett gemensamt ägarskap.<br/>
-                    Som en konsekvens av detta har han därför varit med och tagit fram <a href={"https://mobtimer.com/"}>mobtimer.com</a> som underlättar arbetet för team att genomföra mobbprogrammering.</div>
-
-                <div className="games-container">
-                    <h4>Games</h4>
-                    {this.games.map(game => {
-                        return (
-                            <a className="game" href={game.link}>{game.name}</a>
-                        )
-                    })}
+                    Som en konsekvens av detta har han därför varit med och tagit fram <a
+                        href={"https://mobtimer.com/"}>mobtimer.com</a> som underlättar arbetet för team att genomföra
+                    mobbprogrammering.
                 </div>
                 <footer>
-                    <a href="mailto:par.strandberg@gmail.com">par.strandberg@gmail.com</a>
+                    <a href="https://github.com/Pratterino/"><FontAwesomeIcon icon={faGithub}/> Github</a>
+                    <a href="https://www.linkedin.com/in/p%C3%A4r-strandberg-271309185/"><FontAwesomeIcon icon={faLinkedin}/> LinkedIn</a>
                 </footer>
-            </div>
-        );
-    }
+            </section>
+        </div>
+    );
 }
 
 export default App;
