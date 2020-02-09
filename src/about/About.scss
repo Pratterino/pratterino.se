@@ -1,0 +1,49 @@
+$backgroundColor: #f06b65;
+$padding: 20px;
+$fontColor: #f8f8f8;
+
+.About {
+  section {
+    flex: 1 0;
+    min-height: 100vh;
+  }
+
+  header {
+    font-weight: bold;
+    font-size: 38px;
+    margin-bottom: $padding;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  color: $fontColor;
+  font-weight: 400;
+
+  .image {
+    display: flex;
+    height: 100%;
+    background: linear-gradient(-45deg, rgba(0, 0, 0, 0), $backgroundColor), url("./../assets/pratterino_2.jpg");
+    opacity: .65;
+    background-size: cover;
+    background-position: right;
+  }
+
+  .content {
+    font-size: 20px;
+    padding: $padding;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer {
+    position: absolute;
+    bottom: $padding;
+    text-align: left;
+
+    > a {
+      margin: 0 $padding/2;
+      box-shadow: unset;
+    }
+  }
+}
