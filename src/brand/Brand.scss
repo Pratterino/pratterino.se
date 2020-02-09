@@ -1,0 +1,17 @@
+$backgroundColor: #f06b65;
+$padding: 20px;
+$fontColor: #f8f8f8;
+
+.Brand {
+  display: flex;
+  width: 33%;
+
+  img {
+    width: 100%;
+  }
+
+  .brand {
+    padding: $padding;
+    width: 180px;
+  }
+}
