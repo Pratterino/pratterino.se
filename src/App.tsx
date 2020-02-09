@@ -1,7 +1,7 @@
 import React from 'react';
+import About from './About';
+import Work from "./Work";
 import './App.scss';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 
 interface ISkill {
     frontend: Array<string>
@@ -30,30 +30,10 @@ function App() {
             <div className="skill">{`#${_skill}`}</div>
         ));
 
-    return (
-        <div className="App">
-            <section>
-                <div className="image"/>
-            </section>
-            <section className="content">
-                <header>Pär Strandberg</header>
-                <div>Jag är en utvecklare med främst inriktning mot frontend.
-                    Har mycket erfarenheter med en rad olika ramverk såsom: React, Redux, NodeJS.
-                    Jag jobbar testdrivet och har bland annat erfarenhet inom testramverk såsom: Jest, Enzyme, Jasmine,
-                    och
-                    Sanity.<br/><br/>
-                    Det är viktigt att teamet diskuterar kod och känner ett gemensamt ägarskap.<br/>
-                    Som en konsekvens av detta har han därför varit med och tagit fram <a
-                        href={"https://mobtimer.com/"}>mobtimer.com</a> som underlättar arbetet för team att genomföra
-                    mobbprogrammering.
-                </div>
-                <footer>
-                    <a href="https://github.com/Pratterino/"><FontAwesomeIcon icon={faGithub}/> Github</a>
-                    <a href="https://www.linkedin.com/in/p%C3%A4r-strandberg-271309185/"><FontAwesomeIcon icon={faLinkedin}/> LinkedIn</a>
-                </footer>
-            </section>
-        </div>
-    );
+    return [
+        <About/>,
+        <Work/>
+    ];
 }
 
 export default App;
