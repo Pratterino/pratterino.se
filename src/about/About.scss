@@ -1,4 +1,4 @@
-$backgroundColor: #f06b65;
+$backgroundColor: #FE634E;
 $padding: 20px;
 $fontColor: #f8f8f8;
 
@@ -40,6 +40,10 @@ $fontColor: #f8f8f8;
     position: absolute;
     bottom: $padding;
     text-align: left;
+
+    svg {
+      margin-right: 8px;
+    }
 
     > a {
       margin: 0 $padding/2;

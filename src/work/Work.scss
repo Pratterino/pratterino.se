@@ -1,9 +1,9 @@
-$backgroundColor: #f8cb6f;
+$backgroundColor: #FFAD32;
 $padding: 20px;
 $fontColor: #f8f8f8;
 
 .Work {
-  background: $backgroundColor;
+  background: linear-gradient(45deg, #FFCB8B, $backgroundColor);
   color: $fontColor;
   padding: $padding;
 
