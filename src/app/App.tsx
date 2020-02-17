@@ -12,7 +12,6 @@ interface ISkill {
 function App() {
     return [
         <About/>,
-        <Work/>,
     ];
 }
 
