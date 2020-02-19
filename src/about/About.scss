@@ -3,26 +3,49 @@ $padding: 20px;
 $fontColor: #f8f8f8;
 
 .About {
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .right {
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+    }
+    .left {
+      height: 250px;
+      min-height: unset;
+
+      .image {
+        background-position: center;
+      }
+    }
+  }
+
   hr {
     margin: $padding 0;
     border: 1px solid rgba(248, 248, 248, 0.25);
   }
 
   section {
-    flex: 1 0;
+    flex: 1;
     min-height: 100vh;
   }
 
   header {
     font-weight: bold;
-    font-size: 38px;
+    font-size: 45px;
     margin-bottom: $padding;
   }
 
+  .content {
+    padding: $padding;
+  }
+
+  flex: 1;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   color: $fontColor;
-  font-weight: 400;
+  font-weight: normal;
 
   .image {
     display: flex;
@@ -33,8 +56,35 @@ $fontColor: #f8f8f8;
     background-position: right;
   }
 
-  .content {
-    font-size: 20px;
+  .image-overlay {
+    background-image: url("./../assets/dots.png");
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: $padding * 3;
+    position: absolute;
+    animation: animatedBackground 40s linear infinite normal;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    filter: invert(56%) sepia(46%) saturate(7240%) hue-rotate(332deg) brightness(115%) contrast(118%);
+  }
+
+  @keyframes animatedBackground {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -100% -25%;
+    }
+  }
+
+  .left {
+    position: relative;
+  }
+
+  .right {
+    font-size: 22px;
     padding: $padding;
     display: flex;
     align-items: center;
@@ -42,17 +92,22 @@ $fontColor: #f8f8f8;
   }
 
   footer {
-    position: absolute;
-    bottom: $padding;
-    text-align: left;
+    margin: $padding 0;
+
+    .footer__group {
+      display: inline-flex;
+
+      &:last-of-type {
+        margin: $padding 0;
+      }
+
+      a {
+        margin: 0 $padding/2;
+      }
+    }
 
     svg {
       margin-right: 8px;
-    }
-
-    > a {
-      margin: 0 $padding/2;
-      box-shadow: unset;
     }
   }
 }
